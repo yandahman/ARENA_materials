@@ -1,3 +1,104 @@
+[project]
+name = "arena-materials"
+version = "0.1.0"
+description = "Personal ARENA exercises and solutions"
+readme = "LOCAL_SETUP.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "torch<2.15,>=2.11",
+    "torchvision",
+    "torchaudio",
+    "huggingface_hub",
+    "datasets",
+    "torchinfo",
+    "torchmetrics[image]",
+    "diffusers",
+    "wandb",
+    "accelerate",
+    "ftfy",
+    "safetensors",
+    "openai<4,>=1.56.2",
+    "sentence-transformers",
+    "peft",
+    "liger-kernel",
+    "bitsandbytes",
+    "einops",
+    "eindex-callum",
+    "pandas",
+    "numpy-stl",
+    "scikit-learn",
+    "hdbscan",
+    "umap-learn",
+    "requests",
+    "flask",
+    "pytest",
+    "tqdm",
+    "ipykernel",
+    "notebook",
+    "ipywidgets==7.7.1",
+    "jupyterlab-widgets==1.1.1",
+    "jupyter",
+    "pre-commit",
+    "gdown",
+    "portalocker>=2.0.0",
+    "typeguard",
+    "jaxtyping",
+    "tiktoken",
+    "frozendict",
+    "tabulate",
+    "opencv-python",
+    "nbformat",
+    "docformatter",
+    "pyyaml",
+    "matplotlib",
+    "liveplot",
+    "plotly",
+    "anywidget",
+    "streamlit",
+    "streamlit-antd-components==0.2.5",
+    "streamlit-image-select",
+    "streamlit-on-Hover-tabs",
+    "nnsight<0.8,>=0.7",
+    "imageio-ffmpeg",
+    "mediapy",
+    "transformer_lens<4,>=3.9",
+    "transformers<6,>=5.9",
+    "sae-lens<7.0.0,>=6.51.3",
+    "sae-vis",
+    "circuitsvis",
+    "neel-plotly",
+    "pygame",
+    "gymnasium[atari,other]<2,>=1.2",
+    "ale-py>=0.10",
+    "mujoco",
+    "jax[cuda13]==0.11.2",
+    "brax==0.14.2",
+    "envpool==1.2.5",
+    "inspect_ai",
+    "wikipedia",
+    "python-dotenv",
+    "anthropic>=0.42.0",
+    "instructor",
+]
+
+[dependency-groups]
+dev = ["marimo>=0.25.2", "pip"]
+
+[tool.uv]
+package = false
+# sae-vis also declares eindex by Git URL; keep both requests on the same commit.
+override-dependencies = ["eindex-callum @ git+https://github.com/ARENA-education/eindex.git@e47311e9ec0b88bfde30c19ac0cc4bd8a660d0d9"]
+# The full upstream stack includes Linux CUDA wheels and envpool.
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64' and platform_python_implementation == 'CPython'"]
+
+[tool.uv.sources]
+liger-kernel = { git = "https://github.com/linkedin/Liger-Kernel.git", rev = "1ab779ff0990d205e6003fa34c7618f0e8c50337" }
+eindex-callum = { git = "https://github.com/ARENA-education/eindex.git", rev = "e47311e9ec0b88bfde30c19ac0cc4bd8a660d0d9" }
+liveplot = { git = "https://github.com/ARENA-education/liveplot.git", rev = "f49ee1b346e1ec66a7034f479004ab8a5613dbe9" }
+sae-vis = { git = "https://github.com/ARENA-education/sae_vis.git", rev = "bff38cb1a25f28032b991bedfe970a41b15cf0fd" }
+circuitsvis = { git = "https://github.com/ARENA-education/CircuitsVis.git", rev = "3e82cd4b0c358be6dea7db6f05516a0ac323b745", subdirectory = "python" }
+neel-plotly = { git = "https://github.com/neelnanda-io/neel-plotly", rev = "6dc24b26f8dec991908479d7445dae496b3430b7" }
+
 [tool.ruff]
 line-length = 100
 

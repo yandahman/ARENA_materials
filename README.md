@@ -1,3 +1,7 @@
+> **Personal uv workspace:** Follow [LOCAL_SETUP.md](LOCAL_SETUP.md) for this fork's
+> environment, notebooks, and Git workflow. Start with `workon ARENA_materials` and
+> `uv sync --locked`.
+
 ### ARENA [slack channel](https://info-arena.github.io/ARENA_img/slack.html)
 
 * Please report any errors/concerns with the material in #errata.
